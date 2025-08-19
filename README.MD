@@ -19,7 +19,7 @@ Follow these steps to get the project up and running on your local machine.
 ### Clone the Repository
 
 ```bash
-https://github.com/jcg0807/quizThree.git
+https://github.com/jcg0807/Quweez3.git
 cd Activity
 ```
 
