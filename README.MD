@@ -47,7 +47,7 @@ Login
 If you registered, you'll be automatically logged in.
 
 Create a Job post
-Once logged in, click on the "Create New Tweet" link or navigate to http://127.0.0.1:8000/tweet/create/.
+Once logged in, click on the "Click Here to a Create Job Opening" link or navigate to http://127.0.0.1:8000/tweet/create/.
 Enter your text.
 or, upload an image.
 Click "Publish" to post.
