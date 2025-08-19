@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - PORTAL</title>
+</head>
+<body>
+    <h1>Company Portal++</h1>
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}! What's on your mind?</p>
+        <p><a href="{% url 'tweet_create' %}">Click Here to a Create Job Opening</a></p>
+    {% else %}
+        <p><a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a></p>
+    {% endif %}
+
+    <h2>Latest Job Openings</h2>
+    {% for tweet in tweets %}
+        <div>
+            <p><strong>@{{ tweet.user.username }}</strong> - {{ tweet.created_at }}</p>
+            {% if tweet.image %}
+                <img src="{{ tweet.image.url }}" alt="Tweet Image" style="max-width: 300px;">
+            {% endif %}
+            <hr>
+        </div>
+    {% empty %}
+        <p>No job openings yet.</p>
+    {% endfor %}
+    
+    {% if user.is_authenticated %}
+        <p>Click the button, {{ user.username }}! <form action="{% url 'logout' %}" method="post" style="display:inline;"> to logout </p>
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+</p>
+{% endif %}
+</body>
+</html>
